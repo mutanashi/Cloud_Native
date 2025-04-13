@@ -17,4 +17,15 @@ jobs:
 
       - name: Step 3 - Run code
         run: |
-          python3 f-test1.py
+          python3 test.py
+      - name: Step 4 - check output
+        run:
+          output=$(python3 test.py)
+          echo "Output was: $output"
+          if [[ "$output" == *"4"* ]]; then
+            echo "✅ Output is OK"
+            exit 0
+          else
+            echo "❌ Output is NOT OK"
+            exit 1
+          fi
