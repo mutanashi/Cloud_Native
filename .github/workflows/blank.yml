@@ -22,7 +22,7 @@ jobs:
         run:
           output=$(python3 test.py)
           echo "Output was: $output"
-          if [[ "$output" == *"2"* ]]; then
+          if [[ "$output" == 2 ]]; then
             echo "✅ Output is OK"
             exit 0
           else
