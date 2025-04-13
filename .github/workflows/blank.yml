@@ -1,0 +1,20 @@
+name: Python CI
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Step 2 - Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Step 3 - Run code
+        run: |
+          python3 f-test1.py
